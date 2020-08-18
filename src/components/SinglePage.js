@@ -1,8 +1,76 @@
 import React from 'react';
 
-const SinglePage = () => {
+import Header from './Header';
+import BackButton from './BackButton';
+import Avatar from './Avatar';
+import Currency from './Currency';
+import RankIndicator from './RankIndicator';
+
+const SinglePage = ({
+	name,
+	abbrev,
+	price,
+	marketCap,
+	volume24hr,
+	circulatingSupply,
+	rank,
+	userCurrency,
+}) => {
+
+	const sections = [
+		{
+			title: 'Market Cap',
+			value: marketCap,
+			type: 'fiat',
+			symbol: userCurrency,
+		},
+		{
+			title: '24h Volume',
+			value: volume24hr,
+			type: 'fiat',
+			symbol: userCurrency,
+		},
+		{
+			title: 'Circulating Supply',
+			value: circulatingSupply,
+			type: 'crypto',
+			symbol: abbrev,
+		},
+	];
+
 	return (
-		<div>SinglePage</div>
+		<>
+			<Header >
+				<BackButton />
+
+				<Avatar
+					name={ name }
+					abbrev={ abbrev }
+
+				/>
+				<Currency
+					symbol={ userCurrency }
+					type='fiat'
+					value={ price }
+				/>
+
+			</Header>
+			<main>
+				<RankIndicator rank={ rank } />
+
+				{ sections.map(section => (
+					<section>
+						<h2>{ section.title }</h2>
+						<Currency
+							symbol={ section.symbol }
+							type={ section.type }
+							value={ section.value }
+						/>
+					</section>
+				))}
+
+			</main>
+		</>
 	);
 };
 

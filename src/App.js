@@ -8,6 +8,7 @@ import RankIndicator from './components/RankIndicator';
 import Header from './components/Header';
 import Currency from './components/Currency';
 import Avatar from './components/Avatar';
+import SinglePage from './components/SinglePage';
 
 const App = () => {
 	return (
@@ -20,6 +21,7 @@ const App = () => {
 			<Header />
 			<Currency />
 			<Avatar />
+			<SinglePage />
 		</>
 	);
 };

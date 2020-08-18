@@ -15,4 +15,4 @@ export default Avatar;
 Avatar.defaultProps = {
 	name: 'Bitcoin',
 	abbrev: 'btc'
-}
+};
