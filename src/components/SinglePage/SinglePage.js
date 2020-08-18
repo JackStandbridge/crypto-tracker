@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Header from './Header';
-import BackButton from './BackButton';
-import Avatar from './Avatar';
-import Currency from './Currency';
-import RankIndicator from './RankIndicator';
+import Header from '../Header';
+import BackButton from '../BackButton';
+import Avatar from '../Avatar';
+import Currency from '../Currency';
+import RankIndicator from '../RankIndicator';
 
 const SinglePage = ({
 	name,
-	abbrev,
+	id,
 	price,
 	marketCap,
 	volume24hr,
@@ -34,7 +34,7 @@ const SinglePage = ({
 			title: 'Circulating Supply',
 			value: circulatingSupply,
 			type: 'crypto',
-			symbol: abbrev,
+			symbol: id,
 		},
 	];
 
@@ -45,7 +45,7 @@ const SinglePage = ({
 
 				<Avatar
 					name={ name }
-					abbrev={ abbrev }
+					id={ id }
 
 				/>
 				<Currency
@@ -59,7 +59,7 @@ const SinglePage = ({
 				<RankIndicator rank={ rank } />
 
 				{ sections.map(section => (
-					<section>
+					<section key={ section.title }>
 						<h2>{ section.title }</h2>
 						<Currency
 							symbol={ section.symbol }
@@ -78,7 +78,7 @@ export default SinglePage;
 
 SinglePage.defaultProps = {
 	name: 'Bitcoin',
-	abbrev: 'btc',
+	id: 'btc',
 	price: 0,
 	marketCap: 0,
 	volume24hr: 0,

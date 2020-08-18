@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Avatar = ({ name, abbrev }) => {
+const Avatar = ({ name, id }) => {
 	return (
 		<div>
-			<img src={ require(`../assets/${ abbrev }-logo.svg`) } alt={ `${ name } logo` } />
+			<img src={ require(`../assets/${ id }-logo.svg`) } alt={ `${ name } logo` } />
 			<span>{ name }</span>
-			<span>{ abbrev }</span>
+			<span>{ id }</span>
 		</div>
 	);
 };
@@ -14,5 +14,5 @@ export default Avatar;
 
 Avatar.defaultProps = {
 	name: 'Bitcoin',
-	abbrev: 'btc'
+	id: 'btc'
 };

@@ -3,11 +3,11 @@ import React from 'react';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
 
-const Table = () => {
+const Table = ({ rows }) => {
 	return (
 		<table>
 			<TableHead />
-			<TableBody />
+			<TableBody rows={ rows } />
 		</table>
 	);
 };

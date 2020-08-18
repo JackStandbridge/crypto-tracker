@@ -1,7 +1,7 @@
 const initial = {
 	currencies: {},
 	currencyIds: [],
-	userLanguage: 'EN',
+	userCurrency: 'USD',
 };
 
 export default initial;

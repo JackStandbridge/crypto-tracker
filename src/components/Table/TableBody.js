@@ -8,7 +8,7 @@ const TableBody = ({ rows }) => {
 			{ rows.map(row => {
 
 				const cells = [
-					row.name,
+					row.id,
 					row.price,
 					row.marketCap,
 					row.change24hr
@@ -19,8 +19,8 @@ const TableBody = ({ rows }) => {
 						{ cells.map(cell => (
 							<TableCell
 								value={ cell }
-								element='th'
-								link={ row.abbrev }
+								element='td'
+								link={ row.id }
 							/>
 						)) }
 					</tr>
@@ -36,7 +36,7 @@ TableBody.defaultProps = {
 	rows: [
 		{
 			name: 'Bitcoin',
-			abbrev: 'btc',
+			id: 'btc',
 			price: 0,
 			change24hr: 0,
 			marketCap: 0,

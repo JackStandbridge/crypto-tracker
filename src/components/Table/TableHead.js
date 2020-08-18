@@ -24,6 +24,6 @@ TableHead.defaultProps = {
 		'cryptocurrency',
 		'price',
 		'market cap',
-		'24hr change'
+		'24h change'
 	],
 };

@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Table from './Table';
 
 const TableContainer = () => {
-	useEffect(() => {
+	const currencies = useSelector(({ currencies, currencyIds }) => {
+		return currencyIds.map(id => currencies[id]);
+	});
 
-	}, []);
-
-	return <Table />;
+	return <Table rows={ currencies } />;
 };
 
 export default TableContainer;

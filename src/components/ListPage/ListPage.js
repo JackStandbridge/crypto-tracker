@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Table from './Table';
-import Header from './Header';
+import Table from '../Table';
+import Header from '../Header';
 
 const ListPage = () => {
 	return (
