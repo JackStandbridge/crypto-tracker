@@ -75,3 +75,14 @@ const SinglePage = ({
 };
 
 export default SinglePage;
+
+SinglePage.defaultProps = {
+	name: 'Bitcoin',
+	abbrev: 'btc',
+	price: 0,
+	marketCap: 0,
+	volume24hr: 0,
+	circulatingSupply: 0,
+	rank: 0,
+	userCurrency: '$',
+}

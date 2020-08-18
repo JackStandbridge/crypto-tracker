@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { ReactComponent as BackIcon } from '../assets/back.svg'
 
 const BackButton = () => {
 	return (
-		<a href='/' aria-label='Home'>
+		<Link to='/' aria-label='Home'>
 			<BackIcon />
-		</a>
+		</Link>
 	);
 };
 
