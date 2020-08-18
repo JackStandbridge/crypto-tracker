@@ -1,17 +1,10 @@
 import React from 'react';
 
-import TableCell from './TableCell';
-
 const TableHead = ({ columns }) => {
 	return (
 		<thead>
 			<tr>
-				{ columns.map(col => (
-					<TableCell
-						value={ col }
-						element='th'
-					/>
-				)) }
+				{ columns.map(col => <th key={ col }>{ col }</th>) }
 			</tr>
 		</thead>
 	);

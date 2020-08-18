@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TableCell from './TableCell';
+import TableTd from './TableTd';
 
 const TableBody = ({ rows }) => {
 	return (
@@ -8,17 +8,32 @@ const TableBody = ({ rows }) => {
 			{ rows.map(row => {
 
 				const cells = [
-					row.id,
-					row.price,
-					row.marketCap,
-					row.change24hr
+					{
+						value: row.fullname,
+						type: 'icon',
+						id: row.id,
+						rank: row.rank,
+					},
+					{
+						value: row.price,
+						type: 'currency'
+					},
+					{
+						value: row.marketCap,
+						type: 'currency'
+					},
+					{
+						value: row.change24hr,
+						type: 'percentage',
+					},
 				];
 
 				return (
-					<tr>
-						{ cells.map(cell => (
-							<TableCell
-								value={ cell }
+					<tr key={ row.id }>
+						{ cells.map((cell, i) => (
+							<TableTd
+								key={ i }
+								{ ...cell }
 								element='td'
 								link={ row.id }
 							/>

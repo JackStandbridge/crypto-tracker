@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { getIcon } from '../data/utils';
+
 const Avatar = ({ name, id }) => {
 	return (
 		<div>
-			<img src={ require(`../assets/${ id }-logo.svg`) } alt={ `${ name } logo` } />
+			<img src={ getIcon(id) } alt={ `${ name } logo` } />
 			<span>{ name }</span>
 			<span>{ id }</span>
 		</div>
