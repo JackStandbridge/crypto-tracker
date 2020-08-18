@@ -1,8 +1,12 @@
 import React from 'react';
+import CurrencyPicker from './CurrencyPicker';
 
-const Header = () => {
+const Header = ({ children }) => {
 	return (
-		<header>Header</header>
+		<header>
+			{ children }
+			<CurrencyPicker />
+		</header>
 	);
 };
 
