@@ -1,8 +1,12 @@
 import React from 'react';
 
+import CurrencyPicker from './components/CurrencyPicker';
+
 const App = () => {
 	return (
-		<div>App</div>
+		<>
+			<CurrencyPicker />
+		</>
 	);
 };
 
