@@ -1,8 +1,14 @@
 import React from 'react';
 
+import TableHead from './TableHead';
+import TableBody from './TableBody';
+
 const Table = () => {
 	return (
-		<div>Table</div>
+		<table>
+			<TableHead />
+			<TableBody />
+		</table>
 	);
 };
 

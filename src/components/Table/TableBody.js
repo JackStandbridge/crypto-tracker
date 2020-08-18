@@ -1,9 +1,26 @@
 import React from 'react';
 
-const TableBody = () => {
+import TableCell from './TableCell';
+
+const TableBody = ({ rows }) => {
 	return (
-		<div>TableBody</div>
+		<tbody>
+			{ rows.map(row => (
+				<tr>
+					{ row.map(cell => (
+						<TableCell
+							value={ cell }
+							element='th'
+						/>
+					))}
+				</tr>
+			)) }
+		</tbody>
 	);
 };
 
 export default TableBody;
+
+TableBody.defaultProps = {
+	rows: []
+};

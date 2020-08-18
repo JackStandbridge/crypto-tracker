@@ -1,9 +1,29 @@
 import React from 'react';
 
-const TableHead = () => {
+import TableCell from './TableCell';
+
+const TableHead = ({ columns }) => {
 	return (
-		<div>TableHead</div>
+		<thead>
+			<tr>
+				{ columns.map(col => (
+					<TableCell
+						value={ col }
+						element='th'
+					/>
+				)) }
+			</tr>
+		</thead>
 	);
 };
 
 export default TableHead;
+
+TableHead.defaultProps = {
+	columns: [
+		'cryptocurrency',
+		'price',
+		'market cap',
+		'24hr change'
+	],
+};
