@@ -15,11 +15,11 @@ const setCurrencyList = (state, { payload }) => {
 
 		currency.id = id;
 		currency.fullname = CoinInfo.FullName;
-
+		currency.logo = CoinInfo.ImageUrl;
 		currency.price = currencyData.PRICE;
 		currency.marketCap = currencyData.MKTCAP;
 		currency.change24hr = currencyData.CHANGEPCT24HOUR;
-		currency.volume24hr = currencyData.VOLUME24HOURTO;
+		currency.volume24hr = currencyData.VOLUME24HOUR;
 		currency.circulatingSupply = currencyData.SUPPLY;
 		currency.rank = rank + 1;
 	});

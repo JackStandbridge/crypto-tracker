@@ -7,13 +7,14 @@ import Currency from '../Currency';
 import RankIndicator from '../RankIndicator';
 
 const SinglePage = ({
-	name,
 	id,
+	rank,
+	logo,
 	price,
+	fullname,
 	marketCap,
 	volume24hr,
 	circulatingSupply,
-	rank,
 	userCurrency,
 }) => {
 
@@ -44,9 +45,9 @@ const SinglePage = ({
 				<BackButton />
 
 				<Avatar
-					name={ name }
+					name={ fullname }
 					id={ id }
-
+					logo={ logo }
 				/>
 				<Currency
 					symbol={ userCurrency }
@@ -77,12 +78,12 @@ const SinglePage = ({
 export default SinglePage;
 
 SinglePage.defaultProps = {
-	name: 'Bitcoin',
-	id: 'btc',
+	fullname: 'CURRENCY_NAME',
+	id: 'CURRENCY_ID',
 	price: 0,
 	marketCap: 0,
 	volume24hr: 0,
 	circulatingSupply: 0,
 	rank: 0,
-	userCurrency: '$',
+	userCurrency: 'USER_CURRENCY_SYMBOL',
 }

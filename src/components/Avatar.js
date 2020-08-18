@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { getIcon } from '../data/utils';
-
-const Avatar = ({ name, id }) => {
+const Avatar = ({ name, id, logo }) => {
 	return (
 		<div>
-			<img src={ getIcon(id) } alt={ `${ name } logo` } />
+			<img src={ `https://www.cryptocompare.com/${ logo }` } alt={ `${ name } logo` } />
 			<span>{ name }</span>
 			<span>{ id }</span>
 		</div>
@@ -15,6 +13,6 @@ const Avatar = ({ name, id }) => {
 export default Avatar;
 
 Avatar.defaultProps = {
-	name: 'Bitcoin',
-	id: 'btc'
+	name: 'CURRENCY_NAME',
+	id: 'CURRENCY_ID'
 };

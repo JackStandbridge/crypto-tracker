@@ -39,5 +39,5 @@ export const getOneCurrency = id => async (dispatch, getState) => {
 	const response = await fetch(url);
 	const json = await response.json();
 
-	dispatch(setOneCurrency({ ...json, id  }));
+	dispatch(setOneCurrency({ ...json, id }));
 }

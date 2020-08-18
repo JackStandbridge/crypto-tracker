@@ -11,7 +11,7 @@ const TableBody = ({ rows }) => {
 					{
 						value: row.fullname,
 						type: 'icon',
-						id: row.id,
+						logo: row.logo,
 						rank: row.rank,
 					},
 					{

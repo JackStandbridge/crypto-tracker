@@ -11,7 +11,7 @@ const TableCell = ({
 	className,
 	link,
 	type,
-	id,
+	logo,
 	rank
 }) => {
 	const userCurrency = useSelector(({ userCurrency }) => userCurrency);
@@ -32,7 +32,7 @@ const TableCell = ({
 						<span>{ rank }</span>
 						<img
 							alt={ `${ value } logo` }
-							src={ getIcon(id) }
+							src={ `https://www.cryptocompare.com/${ logo }` }
 						/>
 						<span>{ value }</span>
 					</>

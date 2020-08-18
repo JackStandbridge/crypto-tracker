@@ -3,13 +3,13 @@ import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 
 import SinglePage from './SinglePage';
 
-import { getOneCurrency } from '../../data/reducer';
+import { getCurrencyList } from '../../data/reducer';
 
 const SinglePageContainer = ({ id }) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(getOneCurrency(id));
+		dispatch(getCurrencyList());
 	}, [id, dispatch]);
 
 	const currency = useSelector(
@@ -17,8 +17,13 @@ const SinglePageContainer = ({ id }) => {
 		shallowEqual
 	);
 
+	const userCurrency = useSelector(({ userCurrency }) => userCurrency);
+
 	return (
-		<SinglePage { ...currency } />
+		<SinglePage
+			{ ...currency }
+			userCurrency={ userCurrency }
+		/>
 	);
 };
 
