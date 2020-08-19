@@ -4,10 +4,12 @@ import * as reducers from './reducers';
 
 const setCurrencyList = createAction('setCurrencyList');
 export const setUserCurrency = createAction('setUserCurrency');
+export const setSortOrder = createAction('setSortOrder');
 
 const reducer = createReducer(initialState, {
 	[setCurrencyList]: reducers.setCurrencyList,
 	[setUserCurrency]: reducers.setUserCurrency,
+	[setSortOrder]: reducers.setSortOrder,
 });
 
 export default reducer;

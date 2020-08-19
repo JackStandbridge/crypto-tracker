@@ -118,6 +118,7 @@
 .th {
 	color: $textAlt;
 	border: 0;
+	cursor: pointer;
 
 	.cell {
 		height: 40px;
@@ -125,6 +126,12 @@
 		padding-bottom: 0.2rem;
 		text-transform: uppercase;
 		font-size: 0.9rem;
+
+		&:hover {
+			&, &.cell::before, &.cell::after {
+				background-color: white;
+			}
+		}
 	}
 
 	&:last-of-type .cell {
