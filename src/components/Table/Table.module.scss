@@ -77,8 +77,8 @@
 }
 
 .iconCell {
+	@extend .cell;
 	gap: 1rem;
-	composes: cell;
 
 	img {
 		height: 25px;
@@ -87,8 +87,19 @@
 }
 
 .percentageCell {
-	composes: cell;
+	@extend .cell;
 	justify-content: flex-end;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.percentageCellRise {
+	@extend .percentageCell;
+	color: $green;
+}
+.percentageCellFall {
+	@extend .percentageCell;
+	color: $red;
 }
 
 .th {

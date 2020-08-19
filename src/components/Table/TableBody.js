@@ -17,12 +17,14 @@ const TableBody = ({ rows }) => {
 						rank: row.rank,
 					},
 					{
-						value: row.price.toFixed(2),
-						type: 'currency'
+						value: row.price,
+						type: 'currency',
+						decimals: 2
 					},
 					{
-						value: row.marketCap.toFixed(0),
-						type: 'currency'
+						value: row.marketCap,
+						type: 'currency',
+						decimals: 0,
 					},
 					{
 						value: row.change24hr,

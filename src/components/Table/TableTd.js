@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import Currency from '../Currency';
+import Currency from '../Currency/Currency';
 
 import stylesheet from './Table.module.scss';
 
@@ -11,7 +11,8 @@ const TableCell = ({
 	link,
 	type,
 	logo,
-	rank
+	rank,
+	decimals,
 }) => {
 
 	const userCurrency = useSelector(({ userCurrency }) => userCurrency);
@@ -39,12 +40,13 @@ const TableCell = ({
 							symbol={ userCurrency }
 							type='fiat'
 							value={ value }
+							decimals={ decimals }
 						/>
 					</div>
 				}
 
 				{ type === 'percentage' &&
-					<div className={ stylesheet.percentageCell }>
+					<div className={ stylesheet[ `percentageCell${ value < 0 ? 'Fall' : 'Rise' }`] }>
 						<span>{ value.toFixed(2) }%</span>
 					</div>
 				}
