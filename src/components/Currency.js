@@ -2,7 +2,7 @@ import React from 'react';
 
 const Currency = ({ symbol, type, value }) => {
 	return (
-		<span>
+		<>
 			{ type === 'fiat' &&
 				<span>{ symbol }</span>
 			}
@@ -12,7 +12,7 @@ const Currency = ({ symbol, type, value }) => {
 			{ type === 'crypto' &&
 				<span>{ symbol }</span>
 			}
-		</span>
+		</>
 	);
 };
 

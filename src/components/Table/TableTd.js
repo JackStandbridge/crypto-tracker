@@ -4,42 +4,49 @@ import { Link } from 'react-router-dom';
 
 import Currency from '../Currency';
 
-import { getIcon } from '../../data/utils';
+import stylesheet from './Table.module.scss';
 
 const TableCell = ({
 	value,
-	className,
 	link,
 	type,
 	logo,
 	rank
 }) => {
+
 	const userCurrency = useSelector(({ userCurrency }) => userCurrency);
 
 	return (
-		<td className={ className }>
-			<Link to={ link }>
-				{ type === 'currency' &&
-					<Currency
-						symbol={ userCurrency }
-						type='fiat'
-						value={ value }
-					/>
-				}
-
+		<td className={ stylesheet.td }>
+			<Link
+				className={ stylesheet.link }
+				to={ link }
+			>
 				{ type === 'icon' &&
-					<>
-						<span>{ rank }</span>
+					<div className={ stylesheet.iconCell }>
+						<span className={ stylesheet.rank }>{ rank }</span>
 						<img
 							alt={ `${ value } logo` }
 							src={ `https://www.cryptocompare.com/${ logo }` }
 						/>
 						<span>{ value }</span>
-					</>
+					</div>
+				}
+
+				{ type === 'currency' &&
+					<div className={ stylesheet.cell }>
+						<Currency
+							symbol={ userCurrency }
+							type='fiat'
+							value={ value }
+						/>
+					</div>
 				}
 
 				{ type === 'percentage' &&
-					<span>{ value.toFixed(2) }%</span>
+					<div className={ stylesheet.percentageCell }>
+						<span>{ value.toFixed(2) }%</span>
+					</div>
 				}
 			</Link>
 		</td>

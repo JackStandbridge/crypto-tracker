@@ -1,0 +1,93 @@
+@import '../../index.scss';
+
+.table {
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 2rem;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+.row:hover,
+.head {
+	background: $eggblue;
+
+	.td:first-of-type .cell::before,
+	.th:first-of-type .cell::before {
+		background: $eggblue;
+		right: 100%;
+	}
+
+	.td:last-of-type .cell::before,
+	.th:last-of-type .cell::before {
+		background: $eggblue;
+		left: 100%;
+	}
+}
+
+.head {
+	background: $eggblue;
+
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+
+	.th:last-of-type .cell::before,
+	.th:first-of-type .cell::before {
+		border-top: 1px solid grey;
+		border-bottom: 1px solid grey;
+		top: -2px;
+		bottom: -2px;
+	}
+}
+
+.cell {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	text-transform: uppercase;
+	padding: 1rem;
+	height: 40px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -1px;
+		bottom: -1px;
+		width: 100vw;
+	}
+}
+
+.iconCell {
+	gap: 1rem;
+	composes: cell;
+}
+
+.percentageCell {
+	composes: cell;
+	justify-content: flex-end;
+}
+
+.th {
+	color: $textAlt;
+	border: 0;
+
+	.cell {
+		padding-top: 0.2rem;
+		padding-bottom: 0.2rem;
+	}
+
+	&:last-of-type .cell {
+		justify-content: flex-end;
+	}
+}
+
+.rank {
+	display: block;
+	width: 2rem;
+}
+
+.link {
+	text-decoration: none;
+	color: inherit;
+}

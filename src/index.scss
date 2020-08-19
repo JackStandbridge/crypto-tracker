@@ -1,0 +1,16 @@
+$eggblue: #ebf0f4;
+$textGrey: #606c84;
+$textAlt: #aaafc8;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+	color: $textGrey;
+}
+
+img, svg {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+}

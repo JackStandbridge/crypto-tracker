@@ -6,7 +6,9 @@ const setCurrencyList = (state, { payload }) => {
 		const id = CoinInfo.Name.toLowerCase();
 
 		if (!state.currencies[id]) {
-			state.currencies[id] = {};
+			state.currencies[id] = {
+				[userCurrency]: {}
+			};
 		}
 
 		const currency = state.currencies[id];
@@ -16,12 +18,13 @@ const setCurrencyList = (state, { payload }) => {
 		currency.id = id;
 		currency.fullname = CoinInfo.FullName;
 		currency.logo = CoinInfo.ImageUrl;
-		currency.price = currencyData.PRICE;
-		currency.marketCap = currencyData.MKTCAP;
-		currency.change24hr = currencyData.CHANGEPCT24HOUR;
-		currency.volume24hr = currencyData.VOLUME24HOUR;
 		currency.circulatingSupply = currencyData.SUPPLY;
 		currency.rank = rank + 1;
+
+		currency[userCurrency].price = currencyData.PRICE;
+		currency[userCurrency].marketCap = currencyData.MKTCAP;
+		currency[userCurrency].change24hr = currencyData.CHANGEPCT24HOUR;
+		currency[userCurrency].volume24hr = currencyData.VOLUME24HOUR;
 	});
 
 	const currencyIds = payload.Data

@@ -2,6 +2,8 @@ import React from 'react';
 
 import TableTd from './TableTd';
 
+import stylesheet from './Table.module.scss';
+
 const TableBody = ({ rows }) => {
 	return (
 		<tbody>
@@ -15,11 +17,11 @@ const TableBody = ({ rows }) => {
 						rank: row.rank,
 					},
 					{
-						value: row.price,
+						value: row.price.toFixed(2),
 						type: 'currency'
 					},
 					{
-						value: row.marketCap,
+						value: row.marketCap.toFixed(0),
 						type: 'currency'
 					},
 					{
@@ -29,7 +31,7 @@ const TableBody = ({ rows }) => {
 				];
 
 				return (
-					<tr key={ row.id }>
+					<tr className={ stylesheet.row } key={ row.id }>
 						{ cells.map((cell, i) => (
 							<TableTd
 								key={ i }
