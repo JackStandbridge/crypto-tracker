@@ -26,18 +26,21 @@ const SinglePage = ({
 			value: marketCap,
 			type: 'fiat',
 			symbol: userCurrency,
+			position: 'topleft',
 		},
 		{
 			title: '24h Volume',
 			value: volume24hr,
 			type: 'fiat',
 			symbol: userCurrency,
+			position: 'topright',
 		},
 		{
 			title: 'Circulating Supply',
 			value: circulatingSupply,
 			type: 'crypto',
 			symbol: id,
+			position: 'bottomleft',
 		},
 	];
 
@@ -68,8 +71,11 @@ const SinglePage = ({
 					<RankIndicator rank={ rank } />
 
 					{ sections.map(section => (
-						<section key={ section.title }>
-							<h2>{ section.title }</h2>
+						<section
+							key={ section.title }
+							className={ stylesheet[section.position] }
+						>
+							<h2 className={ stylesheet.title }>{ section.title }</h2>
 							<Currency
 								symbol={ section.symbol }
 								type={ section.type }

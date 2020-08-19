@@ -1,8 +1,9 @@
 import React from 'react';
+import stylesheet from './SinglePage/SinglePage.module.scss';
 
 const RankIndicator = ({ rank }) => {
 	return (
-		<div>
+		<div className={ stylesheet.ranking }>
 			Rank <span>{ rank }</span>
 		</div>
 	);

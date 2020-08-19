@@ -5,6 +5,14 @@
 	box-sizing: border-box;
 	margin: auto;
 	padding: 2rem;
+
+	display: grid;
+	grid-template:
+		'ranking topleft    topright'
+		'ranking bottomleft bottomright'
+		/ 1fr    1fr        1fr;
+	justify-items: start;
+	align-items: center;
 }
 
 .background {
@@ -14,4 +22,43 @@
 
 .price {
 	font-size: 1.4rem;
+}
+
+.title {
+	font-size: 1rem;
+	font-weight: bold;
+	color: $midBlue;
+	letter-spacing: 1px;
+}
+
+.ranking {
+	@extend .title;
+	grid-area: ranking;
+	padding-left: 3rem;
+	text-transform: uppercase;
+}
+
+%section {
+	text-transform: uppercase;
+	padding: 5rem 0;
+}
+
+.topleft {
+	@extend %section;
+	grid-area: topleft;
+}
+
+.topright {
+	@extend %section;
+	grid-area: topright;
+}
+
+.bottomleft {
+	@extend %section;
+	grid-area: bottomleft;
+}
+
+.bottomright {
+	@extend %section;
+	grid-area: bottomright;
 }
