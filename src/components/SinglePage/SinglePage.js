@@ -1,10 +1,12 @@
 import React from 'react';
 
 import Header from '../Header';
-import BackButton from '../BackButton';
-import Avatar from '../Avatar';
+import BackButton from '../BackButton/BackButton';
+import Avatar from '../Avatar/Avatar';
 import Currency from '../Currency';
 import RankIndicator from '../RankIndicator';
+
+import stylesheet from './SinglePage.module.scss';
 
 const SinglePage = ({
 	id,
@@ -56,21 +58,25 @@ const SinglePage = ({
 				/>
 
 			</Header>
-			<main>
-				<RankIndicator rank={ rank } />
 
-				{ sections.map(section => (
-					<section key={ section.title }>
-						<h2>{ section.title }</h2>
-						<Currency
-							symbol={ section.symbol }
-							type={ section.type }
-							value={ section.value }
-						/>
-					</section>
-				))}
+			<div className={ stylesheet.background }>
+				<main className={ stylesheet.main }>
 
-			</main>
+					<RankIndicator rank={ rank } />
+
+					{ sections.map(section => (
+						<section key={ section.title }>
+							<h2>{ section.title }</h2>
+							<Currency
+								symbol={ section.symbol }
+								type={ section.type }
+								value={ section.value }
+							/>
+						</section>
+					)) }
+
+				</main>
+			</div>
 		</>
 	);
 };

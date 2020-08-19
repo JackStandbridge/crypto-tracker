@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.main {
+	max-width: $maxWidth;
+	box-sizing: border-box;
+	margin: auto;
+	padding: 2rem;
+}
+
+.background {
+	background: $darkBlue;
+	flex: 1;
+}

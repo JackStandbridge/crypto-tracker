@@ -1,0 +1,22 @@
+.avatar {
+	display: grid;
+	grid-template:
+		'icon fullname'
+		'icon abbreviation';
+	column-gap: 0.4rem;
+}
+
+.icon {
+	grid-area: icon;
+	height: 50px;
+	width: 50px;
+	object-fit: cover;
+}
+
+.fullname {
+	grid-area: fullname;
+}
+
+.abbreviation {
+	grid-area: abbreviation;
+}

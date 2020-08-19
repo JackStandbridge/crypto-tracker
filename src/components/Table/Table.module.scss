@@ -1,4 +1,4 @@
-@import '../../index.scss';
+@import '../../styles/variables';
 
 .table {
 	width: 100%;
@@ -10,23 +10,23 @@
 
 .row:hover,
 .head {
-	background: $eggblue;
+	background: $eggBlue;
 
 	.td:first-of-type .cell::before,
 	.th:first-of-type .cell::before {
-		background: $eggblue;
+		background: $eggBlue;
 		right: 100%;
 	}
 
 	.td:last-of-type .cell::before,
 	.th:last-of-type .cell::before {
-		background: $eggblue;
+		background: $eggBlue;
 		left: 100%;
 	}
 }
 
 .head {
-	background: $eggblue;
+	background: $eggBlue;
 
 	border-top: 1px solid grey;
 	border-bottom: 1px solid grey;
@@ -35,8 +35,8 @@
 	.th:first-of-type .cell::before {
 		border-top: 1px solid grey;
 		border-bottom: 1px solid grey;
-		top: -2px;
-		bottom: -2px;
+		top: -1px;
+		bottom: -1px;
 	}
 }
 
@@ -47,13 +47,13 @@
 	justify-content: flex-start;
 	text-transform: uppercase;
 	padding: 1rem;
-	height: 40px;
+	height: 65px;
 
 	&::before {
 		content: '';
 		position: absolute;
-		top: -1px;
-		bottom: -1px;
+		top: 0;
+		bottom: 0;
 		width: 100vw;
 	}
 }
@@ -73,6 +73,7 @@
 	border: 0;
 
 	.cell {
+		height: 40px;
 		padding-top: 0.2rem;
 		padding-bottom: 0.2rem;
 	}
