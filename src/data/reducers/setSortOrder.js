@@ -4,6 +4,7 @@ const getSortVal = (currency, userCurrency, column) => {
 		case '24h change': return currency[userCurrency].change24hr;
 		case 'market cap': return currency[userCurrency].marketCap;
 		case 'cryptocurrency': return currency.fullname;
+		default: return 0;
 	}
 }
 

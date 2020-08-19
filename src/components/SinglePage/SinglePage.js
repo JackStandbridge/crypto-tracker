@@ -4,7 +4,7 @@ import Header from '../Header';
 import BackButton from '../BackButton/BackButton';
 import Avatar from '../Avatar/Avatar';
 import Currency from '../Currency/Currency';
-import RankIndicator from '../RankIndicator';
+import RankIndicator from '../RankIndicator/RankIndicator';
 
 import stylesheet from './SinglePage.module.scss';
 

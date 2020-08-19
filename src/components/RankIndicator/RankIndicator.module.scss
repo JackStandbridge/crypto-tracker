@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.rank {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+
+	background: $darkishBlue;
+	color: $brightBlue;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
