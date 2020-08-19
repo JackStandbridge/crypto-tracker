@@ -7,3 +7,21 @@
 	border: none;
 	border-bottom: 1px solid $lightGrey;
 }
+
+:global(ul.MuiMenu-list) {
+	padding: 1.5rem 1rem 0.5rem 1rem;
+	width: 8rem;
+	right: 0;
+
+	option {
+		margin-bottom: 1rem;
+
+		&[aria-selected='true'] {
+			color: $pink;
+		}
+	}
+}
+
+:global(div.MuiSelect-select:focus) {
+	background-color: white;
+}

@@ -110,6 +110,7 @@
 }
 .percentageCellFall {
 	@extend .percentageCell;
+	font-weight: 400;
 	color: $red;
 	&::after {
 		content: '\2B07'; // down arrow
