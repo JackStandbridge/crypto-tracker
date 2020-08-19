@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -8,18 +9,32 @@ import {
 import ListPage from './components/ListPage';
 import SinglePage from './components/SinglePage';
 
-const App = () => (
-	<Router>
-		<Switch>
-			<Route exact path='/'>
-				<ListPage />
-			</Route>
+import { getCurrencyList } from './data/reducer';
 
-			<Route exact path='/:id' render={ ({ match }) => (
-				<SinglePage id={ match.params.id } />
-			) } />
-		</Switch>
-	</Router>
-);
+const App = () => {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getCurrencyList());
+	}, [dispatch]);
+
+	setInterval(() => {
+		dispatch(getCurrencyList());
+	}, 60000);
+
+	return (
+		<Router>
+			<Switch>
+				<Route exact path='/'>
+					<ListPage />
+				</Route>
+
+				<Route exact path='/:id' render={ ({ match }) => (
+					<SinglePage id={ match.params.id } />
+				) } />
+			</Switch>
+		</Router>
+	);
+}
 
 export default App;
