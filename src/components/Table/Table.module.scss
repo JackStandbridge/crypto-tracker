@@ -10,16 +10,24 @@
 	background: $eggBlue;
 
 	.td:first-of-type .cell::before,
+	.th:first-of-type .cell::before,
+	.td:last-of-type .cell::before,
+	.th:last-of-type .cell::before {
+		background: $eggBlue;
+	}
+}
+
+.row,
+.head {
+	.td:first-of-type .cell::before,
 	.th:first-of-type .cell::before {
 		content: '';
-		background: $eggBlue;
 		right: 100%;
 	}
 
 	.td:last-of-type .cell::before,
 	.th:last-of-type .cell::before {
 		content: '';
-		background: $eggBlue;
 		left: 100%;
 	}
 }
@@ -73,7 +81,6 @@
 		bottom: 0;
 		width: 100vw;
 	}
-
 }
 
 .iconCell {
@@ -96,10 +103,16 @@
 .percentageCellRise {
 	@extend .percentageCell;
 	color: $green;
+	&::after {
+		content: '\2B06'; // up arrow
+	}
 }
 .percentageCellFall {
 	@extend .percentageCell;
 	color: $red;
+	&::after {
+		content: '\2B07'; // down arrow
+	}
 }
 
 .th {
