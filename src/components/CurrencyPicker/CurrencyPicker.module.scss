@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.select {
+	padding: 0.5rem;
+	border-radius: 0;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid $lightGrey;
+}

@@ -1,14 +1,17 @@
 import React from 'react';
 
-const CurrencyPicker = ({ currencies, handleChange }) => {
+import stylesheet from './CurrencyPicker.module.scss';
+
+const CurrencyPicker = ({ options, value, handleChange }) => {
 	return (
 		<>
 			<select
+				className={ stylesheet.select }
 				onChange={ handleChange }
-				defaultValue={ currencies[0] }
+				value={ value }
 			>
 
-				{ currencies.map(currency => (
+				{ options.map(currency => (
 					<option
 						value={ currency }
 						key={ currency }
@@ -25,11 +28,12 @@ const CurrencyPicker = ({ currencies, handleChange }) => {
 export default CurrencyPicker;
 
 CurrencyPicker.defaultProps = {
-	currencies: [
+	options: [
 		'USD',
 		'GBP',
 		'EUR',
 		'JPY',
 		'KRW',
-	]
-}
+	],
+	value: 'USD',
+};

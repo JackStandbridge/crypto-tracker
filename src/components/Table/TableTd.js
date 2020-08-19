@@ -58,6 +58,10 @@ const TableCell = ({
 export default TableCell;
 
 TableCell.defaultProps = {
-	className: '',
-	link: ''
+	value: 0,
+	link: '#',
+	type: 'fiat',
+	logo: '',
+	rank: 0,
+	decimals: 0,
 };

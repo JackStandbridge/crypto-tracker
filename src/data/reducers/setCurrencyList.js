@@ -6,9 +6,11 @@ const setCurrencyList = (state, { payload }) => {
 		const id = CoinInfo.Name.toLowerCase();
 
 		if (!state.currencies[id]) {
-			state.currencies[id] = {
-				[userCurrency]: {}
-			};
+			state.currencies[id] = {};
+		}
+
+		if (!state.currencies[id][userCurrency]) {
+			state.currencies[id][userCurrency] = {};
 		}
 
 		const currency = state.currencies[id];

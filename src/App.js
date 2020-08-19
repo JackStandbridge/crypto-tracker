@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -13,14 +13,37 @@ import { getCurrencyList } from './data/reducer';
 
 const App = () => {
 	const dispatch = useDispatch();
+	const userCurrency = useSelector(({ userCurrency }) => userCurrency);
+
+	const [, setIntervalId] = useState(null);
 
 	useEffect(() => {
-		dispatch(getCurrencyList());
-	}, [dispatch]);
 
-	setInterval(() => {
 		dispatch(getCurrencyList());
-	}, 60000);
+
+		const interval = setInterval(() => {
+			dispatch(getCurrencyList());
+		}, 60000);
+
+		setIntervalId(prevId => {
+			clearInterval(prevId);
+			console.log('setting new interval');
+			return interval;
+		});
+
+	}, [dispatch, userCurrency]);
+
+	useEffect(() => {
+		return () => {
+			setIntervalId(prevId => {
+				clearInterval(prevId);
+				return null;
+			});
+
+			console.log('cancelling interval due to unmount');
+		}
+	}, [])
+
 
 	return (
 		<Router>
