@@ -76,7 +76,11 @@ const SinglePage = ({
 							className={ stylesheet[section.position] }
 						>
 							<h2 className={ stylesheet.title }>{ section.title }</h2>
+
 							<Currency
+								decimals={ 0 }
+								className={ stylesheet.figure }
+								symbolClass={ stylesheet.symbol }
 								symbol={ section.symbol }
 								type={ section.type }
 								value={ section.value }

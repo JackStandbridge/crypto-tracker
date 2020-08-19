@@ -27,7 +27,6 @@ const App = () => {
 
 		setIntervalId(prevId => {
 			clearInterval(prevId);
-			console.log('setting new interval');
 			return interval;
 		});
 
@@ -39,8 +38,6 @@ const App = () => {
 				clearInterval(prevId);
 				return null;
 			});
-
-			console.log('cancelling interval due to unmount');
 		}
 	}, [])
 

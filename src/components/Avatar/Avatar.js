@@ -2,10 +2,12 @@ import React from 'react';
 import stylesheet from './Avatar.module.scss';
 
 const Avatar = ({ name, id, logo }) => {
+	const logoSrc = logo ? `https://www.cryptocompare.com/${ logo }` : 'data:,';
+
 	return (
 		<div className={ stylesheet.avatar }>
 			<img
-				src={ `https://www.cryptocompare.com/${ logo }` }
+				src={ logoSrc }
 				alt={ `${ name } logo` }
 				className={ stylesheet.icon }
 			/>
@@ -19,5 +21,6 @@ export default Avatar;
 
 Avatar.defaultProps = {
 	name: 'CURRENCY_NAME',
-	id: 'CURRENCY_ID'
+	id: 'CURRENCY_ID',
+	logo: '',
 };

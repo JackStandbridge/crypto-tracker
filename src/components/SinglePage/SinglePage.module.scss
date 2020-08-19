@@ -16,7 +16,7 @@
 }
 
 .background {
-	background: $darkBlue;
+	background: linear-gradient(90deg, $darkestBlue, $darkerBlue);
 	flex: 1;
 }
 
@@ -29,6 +29,7 @@
 	font-weight: bold;
 	color: $midBlue;
 	letter-spacing: 1px;
+	margin-bottom: 1rem;
 }
 
 .ranking {
@@ -64,4 +65,14 @@
 .bottomright {
 	@extend %section;
 	grid-area: bottomright;
+}
+
+.figure {
+	font-size: 1.4rem;
+	color: white;
+}
+
+.symbol {
+	font-size: 1.2rem;
+	color: $midBlue;
 }

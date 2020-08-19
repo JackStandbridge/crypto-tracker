@@ -5,3 +5,12 @@
 	font-weight: bold;
 	color: $textAlt;
 }
+
+.cryptoSymbol {
+	margin-left: 0.5rem;
+	font-size: 1rem;
+	font-weight: bold;
+	color: $green;
+	display: inline-block;
+	transform: translateY(-3px) scaleY(0.9);
+}

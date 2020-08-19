@@ -10,21 +10,33 @@ const currencySymbols = {
 	'KRW': '₩',
 }
 
-const Currency = ({ symbol, type, value, decimals }) => {
+const Currency = ({
+	symbol,
+	symbolClass,
+	type,
+	value,
+	decimals,
+	className
+}) => {
+
+	const fiatClasses = [
+		stylesheet.fiatSymbol,
+		symbolClass ?? ''
+	].join(' ');
 
 	return (
 		<>
 			{ type === 'fiat' &&
-				<span className={ stylesheet.fiatSymbol }>{ currencySymbols[symbol] }</span>
+				<span className={ fiatClasses }>{ currencySymbols[symbol] }</span>
 			}
 
-			<span>{ value.toLocaleString(undefined, {
+			<span className={ className }>{ value.toLocaleString(undefined, {
 				minimumFractionDigits: decimals,
 				maximumFractionDigits: decimals,
 			}) }</span>
 
 			{ type === 'crypto' &&
-				<span>{ symbol }</span>
+				<span className={ stylesheet.cryptoSymbol }>{ symbol }</span>
 			}
 		</>
 	);
@@ -36,4 +48,5 @@ Currency.defaultProps = {
 	symbol: '$',
 	type: 'fiat',
 	value: 0,
-}
+	className: '',
+};
