@@ -13,7 +13,9 @@ const TableContainer = () => {
 		});
 	});
 
-	return <Table rows={ currencies } />;
+	const loading = useSelector(({ loading }) => loading);
+
+	return <Table rows={ currencies } loading={ loading } />;
 };
 
 export default TableContainer;

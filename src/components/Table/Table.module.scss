@@ -3,6 +3,7 @@
 .table {
 	width: 100%;
 	border-collapse: collapse;
+	table-layout: fixed;
 }
 
 .row:hover,
@@ -119,6 +120,12 @@
 	color: $textAlt;
 	border: 0;
 	cursor: pointer;
+
+	width: 20%;
+
+	&:first-of-type {
+		width: 40%;
+	}
 
 	.cell {
 		height: 40px;

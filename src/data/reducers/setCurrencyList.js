@@ -25,7 +25,7 @@ const setCurrencyList = (state, { payload }) => {
 
 		currency[userCurrency].price = currencyData.PRICE;
 		currency[userCurrency].marketCap = currencyData.MKTCAP;
-		currency[userCurrency].change24hr = currencyData.CHANGEPCT24HOURTO;
+		currency[userCurrency].change24hr = currencyData.CHANGEPCT24HOUR;
 		currency[userCurrency].volume24hr = currencyData.VOLUME24HOURTO;
 	});
 

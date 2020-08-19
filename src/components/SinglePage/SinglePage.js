@@ -5,6 +5,7 @@ import BackButton from '../BackButton/BackButton';
 import Avatar from '../Avatar/Avatar';
 import Currency from '../Currency/Currency';
 import RankIndicator from '../RankIndicator/RankIndicator';
+import Loading from '../Loading/Loading';
 
 import stylesheet from './SinglePage.module.scss';
 
@@ -13,11 +14,12 @@ const SinglePage = ({
 	rank,
 	logo,
 	price,
+	loading,
 	fullname,
 	marketCap,
 	volume24hr,
-	circulatingSupply,
 	userCurrency,
+	circulatingSupply,
 }) => {
 
 	const sections = [
@@ -68,25 +70,31 @@ const SinglePage = ({
 			<div className={ stylesheet.background }>
 				<main className={ stylesheet.main }>
 
-					<RankIndicator rank={ rank } />
+					{ loading ? <Loading /> :
 
-					{ sections.map(section => (
-						<section
-							key={ section.title }
-							className={ stylesheet[section.position] }
-						>
-							<h2 className={ stylesheet.title }>{ section.title }</h2>
+						<>
+							<RankIndicator rank={ rank } />
 
-							<Currency
-								decimals={ 0 }
-								className={ stylesheet.figure }
-								symbolClass={ stylesheet.symbol }
-								symbol={ section.symbol }
-								type={ section.type }
-								value={ section.value }
-							/>
-						</section>
-					)) }
+							{ sections.map(section => (
+								<section
+									key={ section.title }
+									className={ stylesheet[section.position] }
+								>
+									<h2 className={ stylesheet.title }>{ section.title }</h2>
+
+									<Currency
+										decimals={ 0 }
+										className={ stylesheet.figure }
+										symbolClass={ stylesheet.symbol }
+										symbol={ section.symbol }
+										type={ section.type }
+										value={ section.value }
+									/>
+								</section>
+							)) }
+						</>
+
+					}
 
 				</main>
 			</div>

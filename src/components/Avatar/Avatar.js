@@ -20,7 +20,7 @@ const Avatar = ({ name, id, logo }) => {
 export default Avatar;
 
 Avatar.defaultProps = {
-	name: 'CURRENCY_NAME',
-	id: 'CURRENCY_ID',
+	name: '',
+	id: '',
 	logo: '',
 };

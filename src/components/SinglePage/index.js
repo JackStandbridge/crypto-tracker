@@ -10,10 +10,13 @@ const SinglePageContainer = ({ id }) => {
 	);
 
 	const userCurrency = useSelector(({ userCurrency }) => userCurrency);
+	const loading = useSelector(({ loading }) => loading);
 
 	const { [userCurrency]: currencyValues, ...props } = currency || {};
 
 	Object.assign(props, currencyValues);
+
+	props.loading = loading;
 
 	return (
 		<SinglePage
