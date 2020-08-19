@@ -2,9 +2,6 @@
 
 .table {
 	width: 100%;
-	max-width: 1200px;
-	padding: 0 2rem;
-	margin: auto;
 	border-collapse: collapse;
 }
 
@@ -22,6 +19,24 @@
 	.th:last-of-type .cell::before {
 		background: $eggBlue;
 		left: 100%;
+	}
+}
+
+.row {
+	position: relative;
+	// hack: absolutely positioned elements
+	// inside a <tr> will not work unless
+	// a transform is applied to the <tr>
+	transform: scale(1);
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: -100vw;
+		right: -100vw;
+		display: block;
+		border-bottom: 1px solid lightgrey;
 	}
 }
 
@@ -45,9 +60,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	text-transform: uppercase;
 	padding: 1rem;
-	height: 65px;
+	height: 75px;
+	letter-spacing: 1px;
 
 	&::before {
 		content: '';
@@ -56,6 +71,7 @@
 		bottom: 0;
 		width: 100vw;
 	}
+
 }
 
 .iconCell {
@@ -76,6 +92,7 @@
 		height: 40px;
 		padding-top: 0.2rem;
 		padding-bottom: 0.2rem;
+		text-transform: uppercase;
 	}
 
 	&:last-of-type .cell {

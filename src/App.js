@@ -6,7 +6,7 @@ import {
 	Route,
 } from 'react-router-dom';
 
-import ListPage from './components/ListPage';
+import ListPage from './components/ListPage/ListPage';
 import SinglePage from './components/SinglePage';
 
 import { getCurrencyList } from './data/reducer';

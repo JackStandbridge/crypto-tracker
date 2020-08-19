@@ -16,10 +16,15 @@ html {
 
 body {
 	margin: 0;
+	width: 100vw;
+	overflow-x: hidden;
 }
 
 main {
 	padding: 0 2rem;
+	max-width: $maxWidth;
+	width: 100%;
+	margin: 0 auto;
 }
 
 #root {
