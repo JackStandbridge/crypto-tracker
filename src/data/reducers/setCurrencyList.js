@@ -33,6 +33,7 @@ const setCurrencyList = (state, { payload }) => {
 		.map(({ CoinInfo }) => CoinInfo.Name.toLowerCase());
 
 	state.currencyIds = currencyIds;
+	state.timestamp = +Date.now();
 };
 
 export default setCurrencyList;

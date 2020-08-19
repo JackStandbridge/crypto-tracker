@@ -43,7 +43,7 @@ const SinglePage = ({
 
 	return (
 		<>
-			<Header >
+			<Header>
 				<BackButton />
 
 				<Avatar
@@ -51,11 +51,14 @@ const SinglePage = ({
 					id={ id }
 					logo={ logo }
 				/>
-				<Currency
-					symbol={ userCurrency }
-					type='fiat'
-					value={ price }
-				/>
+
+				<div className={ stylesheet.price }>
+					<Currency
+						symbol={ userCurrency }
+						type='fiat'
+						value={ price }
+					/>
+				</div>
 
 			</Header>
 
