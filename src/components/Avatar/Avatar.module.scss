@@ -1,9 +1,12 @@
+@import '../../styles/variables';
+
 .avatar {
 	display: grid;
 	grid-template:
 		'icon fullname'
 		'icon abbreviation';
-	column-gap: 0.4rem;
+	column-gap: 1rem;
+	align-items: center;
 }
 
 .icon {
@@ -15,8 +18,16 @@
 
 .fullname {
 	grid-area: fullname;
+	align-self: end;
+	letter-spacing: 2px;
+	font-size: 1.3rem;
 }
 
 .abbreviation {
 	grid-area: abbreviation;
+	text-transform: uppercase;
+	color: $textAlt;
+	align-self: start;
+	font-size: 0.9rem;
+	font-weight: bold;
 }
