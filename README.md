@@ -35,6 +35,8 @@ My approach was as follows:
   - much of the text on these designs is very low contrast, and is not particularly large. I have tried to be as faithful to the designs as the time permitted, but an accessibility review would be a top priority if this were a real-world project.
 - Responsivity
   - No mobile designs were provided, so I took no steps towards making the site responsive. Tabular data is difficult to present on small screens anyway, so a review of exactly how mobile users should use this site would be necessary.
+- Browser compatibility
+  - I didn't have any time to dedicate to cross browser testing, so the site works as expected in the latest version of Google Chrome, but may have unexpected bugs and layout issues in other browsers
 - Payload size
   - requesting all the data for every currency when the user just visits one page may seem unnecessary. The JSON responses that are sent back from the endpoint are smaller than some of the PNG files used for the logo, so it's not a huge concern, but is something that could be optimized.
 - Material UI
